@@ -1,0 +1,26 @@
+
+******************************************************************
+maven clean
+maven build [api package -> jar package.]
+copy all file changes into the [outgoing] folder
+
+******************************************************************
+
+psftp (PuTTy)
+lcd c:\outgoing\
+cd /home/[user]/incoming
+put files in [outgoing] folder -> mput *.*
+
+******************************************************************
+
+putty into [jumpserver]
+open [jumpserver]
+
+scp /home/[user]/incoming/*.* [user]@[job server]/tmp e.g. cgordon@jbocodev02:tmp/
+ssh [job server] e.g. ssh jbocodev02
+elevate priveledges to jobuser -> dzdo su - jobuser
+cd appboy/app  [pwd=/opt/jobuser]
+copy jar to app folder -> cp /tmp/AppboyAPI-0.0.1-SNAPSHOT.jar .
+
+
+
